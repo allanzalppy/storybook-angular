@@ -1,0 +1,15 @@
+<mat-checkbox
+      [checked]="allChecked"
+      [indeterminate]="isFewSelected()"
+      (change)="setAll($event.checked)">
+        {{itemList.name}}
+</mat-checkbox>
+<mat-list>
+  <mat-list-item *ngFor="let item of itemList.items">
+    <mat-checkbox
+         [(ngModel)]="item.selected"
+         (ngModelChange)="updateAllComplete()">
+             {{item.name}}
+    </mat-checkbox>
+  </mat-list-item>
+</mat-list>
