@@ -26,10 +26,12 @@ export class CheckBoxList {
     if (this.itemList.items == null) {
       return;
     }
-    this.itemList.items.forEach(t => t.selected = selected);
+    this.itemList.items.forEach((T, I)=> this.itemList.items[I].selected = selected);
+    console.log(this.itemList.items);
   }
 
-  updateAllComplete() {
+  updateAllComplete(i:number,value:boolean) {
+    this.itemList.items[i].selected=value;
     this.allChecked = this.itemList.items != null && this.itemList.items.every(t => t.selected);
   }
 

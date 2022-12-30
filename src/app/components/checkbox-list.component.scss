@@ -1,4 +1,21 @@
+
+mat-checkbox {
+  &.mat-mdc-checkbox {
+    --mdc-checkbox-state-layer-size: 30px;
+
+    .mdc-checkbox {
+      & > .mat-mdc-checkbox-touch-target {
+        display: none;
+      }
+    }
+  }
+}
+
 mat-list-item {
-  margin-top: -15px !important;
+  &.mat-mdc-list-item {
+    --mdc-checkbox-state-layer-size: 30px;
+    height: var(--mdc-checkbox-state-layer-size);
+
+  }
 }
 

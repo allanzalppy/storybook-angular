@@ -262,7 +262,7 @@
         },
         {
             "name": "CheckBoxList",
-            "id": "component-CheckBoxList-c442d0af4a31cbd5706e4415c73b8879fa6087ac22c3f4f332cb6300d4ce87caf3f036d65a06e43a3f43a577ce98a0a28f5b035bc1fbd39958b27bd801d00950",
+            "id": "component-CheckBoxList-df84119a2b59eaf338688c7a1ba183020723c08b2ac04ad1e8f0def8a5eae2cae6960a4fc250ab8fb51c16efa055f2bc840638ca7b041f7a495c90ebfce78c63",
             "file": "src/app/components/checkbox-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -309,10 +309,7 @@
                     "typeParameters": [],
                     "line": 20,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "setAll",
@@ -330,9 +327,6 @@
                     "line": 24,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
                     "jsdoctags": [
                         {
                             "name": "selected",
@@ -353,10 +347,7 @@
                     "typeParameters": [],
                     "line": 32,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -366,16 +357,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ItemList from './items-list';\r\n\r\n@Component({\r\n  selector: 'storybook-checkbox-list',\r\n  templateUrl: './checkbox-list.component.html',\r\n  styleUrls: ['./checkbox-list.component.scss']\r\n})\r\nexport class CheckBoxList {\r\n  @Input()\r\n  itemList: ItemList = {\r\n    name: \"\",\r\n    selected: false,\r\n    disabled: false,\r\n    items: []\r\n  };\r\n  @Input()\r\n  allChecked: boolean = false;\r\n\r\n  public isFewSelected(): boolean {\r\n    return this.itemList.items.filter(t => t.selected).length > 0 && !this.allChecked;\r\n  }\r\n\r\n  public setAll(selected: boolean) {\r\n    this.allChecked = selected;\r\n    if (this.itemList.items == null) {\r\n      return;\r\n    }\r\n    this.itemList.items.forEach(t => t.selected = selected);\r\n  }\r\n\r\n  public updateAllComplete() {\r\n    this.allChecked = this.itemList.items != null && this.itemList.items.every(t => t.selected);\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ItemList from './items-list';\r\n\r\n@Component({\r\n  selector: 'storybook-checkbox-list',\r\n  templateUrl: './checkbox-list.component.html',\r\n  styleUrls: ['./checkbox-list.component.scss']\r\n})\r\nexport class CheckBoxList {\r\n  @Input()\r\n  itemList: ItemList = {\r\n    name: \"\",\r\n    selected: false,\r\n    disabled: false,\r\n    items: []\r\n  };\r\n  @Input()\r\n  allChecked: boolean = false;\r\n\r\n  isFewSelected(): boolean {\r\n    return this.itemList.items.filter(t => t.selected).length > 0 && !this.allChecked;\r\n  }\r\n\r\n  setAll(selected: boolean) {\r\n    this.allChecked = selected;\r\n    if (this.itemList.items == null) {\r\n      return;\r\n    }\r\n    this.itemList.items.forEach(t => t.selected = selected);\r\n  }\r\n\r\n  updateAllComplete() {\r\n    this.allChecked = this.itemList.items != null && this.itemList.items.every(t => t.selected);\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "ul {\r\n  list-style-type: none\r\n}\r\n",
+                    "data": "mat-list-item {\r\n  margin-top: -15px !important;\r\n}\r\n\r\n",
                     "styleUrl": "./checkbox-list.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-checkbox\r\n      [checked]=\"allChecked\"\r\n      [indeterminate]=\"isFewSelected()\"\r\n      (change)=\"setAll($event.checked)\">\r\n        {{itemList.name}}\r\n</mat-checkbox>\r\n<mat-list role=\"list\">\r\n  <mat-list-item role=\"listitem\" *ngFor=\"let item of itemList.items\">\r\n    <mat-checkbox\r\n         [(ngModel)]=\"item.selected\"\r\n         (ngModelChange)=\"updateAllComplete()\">\r\n             {{item.name}}\r\n    </mat-checkbox>\r\n  </mat-list-item>\r\n</mat-list>\r\n"
+            "templateData": "<mat-checkbox\r\n      [checked]=\"allChecked\"\r\n      [indeterminate]=\"isFewSelected()\"\r\n      (change)=\"setAll($event.checked)\">\r\n        {{itemList.name}}\r\n</mat-checkbox>\r\n<mat-list>\r\n  <mat-list-item *ngFor=\"let item of itemList.items\">\r\n    <mat-checkbox\r\n         [(ngModel)]=\"item.selected\"\r\n         (ngModelChange)=\"updateAllComplete()\">\r\n             {{item.name}}\r\n    </mat-checkbox>\r\n  </mat-list-item>\r\n</mat-list>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -633,7 +624,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/stories/Checkbox-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -643,7 +634,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Checkbox-list.stories.ts",
+                "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -673,21 +664,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Checkbox-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<CheckBoxList>",
                 "defaultValue": "(args: CheckBoxList) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",

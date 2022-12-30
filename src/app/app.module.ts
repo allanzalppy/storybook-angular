@@ -1,3 +1,4 @@
+import { CheckBoxList } from './components/checkbox-list.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,7 +9,8 @@ import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CheckBoxList
   ],
   imports: [
     BrowserModule,
