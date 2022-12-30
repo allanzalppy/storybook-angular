@@ -1,7 +1,7 @@
+import { Story, Meta } from '@storybook/angular/types-6-0';
+import { CheckBoxList } from '../app/components/checkbox-list/checkbox-list.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
-import { Story, Meta } from '@storybook/angular/types-6-0';
-import { CheckBoxList } from '../app/components/checkbox-list.component';
 import { moduleMetadata } from '@storybook/angular';
 
 export default {

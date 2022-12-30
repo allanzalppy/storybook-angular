@@ -1,0 +1,39 @@
+mat-card {
+  width: 359px;
+  height: 320px;
+  transition: box-shadow .1s ease-out;
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+
+  a {
+    display: block;
+    height: inherit;
+  }
+
+}
+
+a {
+  text-decoration: none;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9b1515;
+  color: #fff;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 45px);
+
+  img {
+    vertical-align: middle;
+  }
+}

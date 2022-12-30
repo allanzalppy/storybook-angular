@@ -4,7 +4,7 @@
         {
             "name": "Item",
             "id": "interface-Item-beeb19a1c738e0a317fa5f588a34975e8722c1d7a882f2c126cb06de7d7d57971710fe856c9158b1cc60e6a000d2c5a06d40ebf60638e912ba91661bc25210f9",
-            "file": "src/app/components/items-list.ts",
+            "file": "src/app/components/checkbox-list/items-list.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -45,7 +45,7 @@
         {
             "name": "ItemList",
             "id": "interface-ItemList-beeb19a1c738e0a317fa5f588a34975e8722c1d7a882f2c126cb06de7d7d57971710fe856c9158b1cc60e6a000d2c5a06d40ebf60638e912ba91661bc25210f9",
-            "file": "src/app/components/items-list.ts",
+            "file": "src/app/components/checkbox-list/items-list.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -129,7 +129,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ":root {\r\n  --mdc-checkbox-state-layer-size: 40px;\r\n}\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -261,9 +261,77 @@
             }
         },
         {
+            "name": "CardComponent",
+            "id": "component-CardComponent-6e734b0af47aeacb0102a6d474eb3824ae0b7623ab2cbb31e24e6ac1f708f22a56f6add7a0da75dea5ac9274ee2b807a240f9433b527c427f878d5f074d69d32",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-card",
+            "styleUrls": [
+                "./card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "altLabel",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "cardUrl",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'storybook-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent {\n@Input()\ncardUrl: string = \"\";\n@Input()\naltLabel: string = \"\";\n@Input()\nlabel: string = \"\";\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-card {\r\n  max-width: 400px;\r\n}\r\n",
+                    "styleUrl": "./card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-card>\n  <img mat-card-image src=\"{{ cardUrl }}\" alt=\"{{ altLabel }}\">\n  <mat-card-content>\n    <p>{{ label }} </p>\n  </mat-card-content>\n</mat-card>\n"
+        },
+        {
             "name": "CheckBoxList",
-            "id": "component-CheckBoxList-df84119a2b59eaf338688c7a1ba183020723c08b2ac04ad1e8f0def8a5eae2cae6960a4fc250ab8fb51c16efa055f2bc840638ca7b041f7a495c90ebfce78c63",
-            "file": "src/app/components/checkbox-list.component.ts",
+            "id": "component-CheckBoxList-41bb85d9e325b4002d5431525e64751889ff9d221b07cb44d5b81ec01b40bd86de75e4f57be3eebd86c5296d6304c3838b7a3de3fc5e326912c7a637f1c427a2",
+            "file": "src/app/components/checkbox-list/checkbox-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -341,13 +409,46 @@
                 },
                 {
                     "name": "updateAllComplete",
-                    "args": [],
+                    "args": [
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 33,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "value",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -357,16 +458,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ItemList from './items-list';\r\n\r\n@Component({\r\n  selector: 'storybook-checkbox-list',\r\n  templateUrl: './checkbox-list.component.html',\r\n  styleUrls: ['./checkbox-list.component.scss']\r\n})\r\nexport class CheckBoxList {\r\n  @Input()\r\n  itemList: ItemList = {\r\n    name: \"\",\r\n    selected: false,\r\n    disabled: false,\r\n    items: []\r\n  };\r\n  @Input()\r\n  allChecked: boolean = false;\r\n\r\n  isFewSelected(): boolean {\r\n    return this.itemList.items.filter(t => t.selected).length > 0 && !this.allChecked;\r\n  }\r\n\r\n  setAll(selected: boolean) {\r\n    this.allChecked = selected;\r\n    if (this.itemList.items == null) {\r\n      return;\r\n    }\r\n    this.itemList.items.forEach(t => t.selected = selected);\r\n  }\r\n\r\n  updateAllComplete() {\r\n    this.allChecked = this.itemList.items != null && this.itemList.items.every(t => t.selected);\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport ItemList from './items-list';\r\n\r\n@Component({\r\n  selector: 'storybook-checkbox-list',\r\n  templateUrl: './checkbox-list.component.html',\r\n  styleUrls: ['./checkbox-list.component.scss']\r\n})\r\nexport class CheckBoxList {\r\n  @Input()\r\n  itemList: ItemList = {\r\n    name: \"\",\r\n    selected: false,\r\n    disabled: false,\r\n    items: []\r\n  };\r\n  @Input()\r\n  allChecked: boolean = false;\r\n\r\n  isFewSelected(): boolean {\r\n    return this.itemList.items.filter(t => t.selected).length > 0 && !this.allChecked;\r\n  }\r\n\r\n  setAll(selected: boolean) {\r\n    this.allChecked = selected;\r\n    if (this.itemList.items == null) {\r\n      return;\r\n    }\r\n    this.itemList.items.forEach((T, I)=> this.itemList.items[I].selected = selected);\r\n    console.log(this.itemList.items);\r\n  }\r\n\r\n  updateAllComplete(i:number,value:boolean) {\r\n    this.itemList.items[i].selected=value;\r\n    this.allChecked = this.itemList.items != null && this.itemList.items.every(t => t.selected);\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "mat-list-item {\r\n  margin-top: -15px !important;\r\n}\r\n\r\n",
+                    "data": "\r\nmat-checkbox {\r\n  &.mat-mdc-checkbox {\r\n    --mdc-checkbox-state-layer-size: 30px;\r\n\r\n    .mdc-checkbox {\r\n      & > .mat-mdc-checkbox-touch-target {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\nmat-list-item {\r\n  &.mat-mdc-list-item {\r\n    --mdc-checkbox-state-layer-size: 30px;\r\n    height: var(--mdc-checkbox-state-layer-size);\r\n\r\n  }\r\n}\r\n\r\n",
                     "styleUrl": "./checkbox-list.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-checkbox\r\n      [checked]=\"allChecked\"\r\n      [indeterminate]=\"isFewSelected()\"\r\n      (change)=\"setAll($event.checked)\">\r\n        {{itemList.name}}\r\n</mat-checkbox>\r\n<mat-list>\r\n  <mat-list-item *ngFor=\"let item of itemList.items\">\r\n    <mat-checkbox\r\n         [(ngModel)]=\"item.selected\"\r\n         (ngModelChange)=\"updateAllComplete()\">\r\n             {{item.name}}\r\n    </mat-checkbox>\r\n  </mat-list-item>\r\n</mat-list>\r\n"
+            "templateData": "<mat-checkbox\r\n      [checked]=\"allChecked\"\r\n\r\n      (change)=\"setAll($event.checked)\">\r\n        {{itemList.name}}\r\n</mat-checkbox>\r\n<mat-list>\r\n\r\n  <mat-list-item *ngFor=\"let item of itemList.items; let i=index\">\r\n    <mat-checkbox\r\n        [checked]=\"item.selected\"\r\n         (change)=\"updateAllComplete(i, !item.selected)\">\r\n             {{item.name}}\r\n    </mat-checkbox>\r\n  </mat-list-item>\r\n</mat-list>\r\n<p *ngFor=\"let item of itemList.items\">\r\n  {{item.selected}}\r\n</p>\r\n<p>\r\n  {{allChecked}}\r\n</p>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -525,13 +626,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-71f319463f27dbbaca84837aa851e6685cc5420cc05ef7f6c28cd71d8a8b5b5b7520d84239ec068d2953886edeb652b4f1a69a6fd01b5e7d8e5506ee1aed14e8",
+            "id": "module-AppModule-2862e8b341b6df5efd000429e0be2634ed195b364e2d63e52dedbb0adefa460e3c9d982931c8696ab96822de9cad52cc547c0f8580d25174de16a2b996c670a7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatListModule } from '@angular/material/list';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    BrowserAnimationsModule,\n    MatCheckboxModule,\n    MatListModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatListModule } from '@angular/material/list';\nimport { MatCardModule } from '@angular/material/card'\nimport { CardComponent } from './components/card/card.component';\nimport { CheckBoxList } from './components/checkbox-list/checkbox-list.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    CheckBoxList,\n    CardComponent\n  ],\n  imports: [\n    BrowserModule,\n    BrowserAnimationsModule,\n    MatCheckboxModule,\n    MatListModule,\n    MatCardModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -542,6 +643,12 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "CardComponent"
+                        },
+                        {
+                            "name": "CheckBoxList"
                         }
                     ]
                 },
@@ -624,7 +731,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Checkbox-list.stories.ts",
+                "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -634,7 +741,17 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/stories/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Checkbox-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -664,21 +781,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Checkbox-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<CheckBoxList>",
-                "defaultValue": "(args: CheckBoxList) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Checkbox-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CheckBoxList>",
+                "defaultValue": "(args: CheckBoxList) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -821,6 +948,28 @@
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
+            "src/stories/Card.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/Checkbox-list.stories.ts": [
                 {
                     "name": "Primary",
@@ -863,7 +1012,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/checkbox-list.component.ts",
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkbox-list/checkbox-list.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CheckBoxList",
@@ -872,7 +1030,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/items-list.ts",
+                "filePath": "src/app/components/checkbox-list/items-list.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "Item",
@@ -881,7 +1039,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/items-list.ts",
+                "filePath": "src/app/components/checkbox-list/items-list.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ItemList",
@@ -931,6 +1089,26 @@
             },
             {
                 "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
